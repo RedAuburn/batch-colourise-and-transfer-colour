@@ -3,8 +3,12 @@
  https://deepai.org/machine-learning-model/colorizer
  
  todo:
+ 
  -overlay colour from colourised image onto original full res image for better resolution
+ 
  -select folder instead of putting script in it
+ 
  -select only individual file mode
+ 
  -only overlay color mode
  
