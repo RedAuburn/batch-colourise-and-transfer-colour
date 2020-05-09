@@ -1,2 +1,2 @@
 # batch-colourise-deepai
-a small python script to batch colourise images using the DeepAI API.
+# https://deepai.org/machine-learning-model/colorizer
