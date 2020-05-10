@@ -29,7 +29,6 @@ for file in os.listdir():
           print("created new file "+newfilename+"\n")
           if (highrescolouroverlay):
              bcwh.main(originalfilepath,newfilepath,True)
-             print(bcwh.main(originalfilepath,newfilepath,True))
     except:
         print("skipping "+file+", not valid image.\n")
 

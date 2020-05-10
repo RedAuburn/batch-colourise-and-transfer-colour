@@ -1,6 +1,5 @@
 from tkinter import filedialog
 import tkinter as tk
-import PIL
 from PIL import Image
 import sys, os
 
@@ -17,26 +16,31 @@ def getimages(hrpathimport,cpathimport,imported):
     if(imported):
         return(hrpathimport,cpathimport)
 
-def scalecoloured(colourtoscale):
-    #need to scale the coloured image to the same resolution as original highres to overlay.
-    return("nothing here yet")
+def scalecoloured(highrespath,colourpath):#done
+    himgres = Image.open(highrespath).size
+    cimg = Image.open(colourpath)
+    cimg = cimg.resize(himgres,Image.BILINEAR)
+    cimg.save(colourpath)
 
-def colourblend(highresin,colourin):
+def colourblend(highrespath,colourpath):
     #for safety, convert highres to grayscale with this stuff
     #img = Image.open('image.png').convert('LA')
     #img.save('greyscale.png')
-    return("nothing here yet")
+    return("nothing here yet\n")
 
     
 #main 
 def main(hrpathimport,cpathimport,importedtest):
     filepaths = getimages(hrpathimport,cpathimport,importedtest)
-    scalecoloured(filepaths[1]) #will apply to image so don't need to assign
-    colourblend(filepaths[0],filepaths[1]) 
+    if(filepaths[0] != "" or filepaths[1] != ""):
+        scalecoloured(filepaths[0],filepaths[1])
+        colourblend(filepaths[0],filepaths[1])
+    else:
+        print("please select two images\n")
     
     
 if __name__ == "__main__":
-    main("nothing entered yet","",False)
+    main("nothing entered yet\n","",False)
     
 
 
