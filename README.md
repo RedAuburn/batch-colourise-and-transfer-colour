@@ -14,4 +14,6 @@
  
  -local file input sanitization when selecting files
  
+ -proper gui
+ 
  -one day maybe use DeOldify locally instead of using API (far away)
