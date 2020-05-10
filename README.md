@@ -19,7 +19,7 @@
  
  - Overlay can be used for individual image sets.
  
- ## todo:
+ ## Todo:
  - select folder instead of putting script in it
  
  - select only individual files mode (done for blend but not batch, just run blend on it's own)
