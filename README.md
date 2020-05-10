@@ -20,6 +20,8 @@
  - Overlay can be used for individual image sets.
  
  ## Todo:
+ - scale image to upload locally
+ 
  - proper GUI
  
  - select folder instead of putting script in it
