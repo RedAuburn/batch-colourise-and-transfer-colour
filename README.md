@@ -1,19 +1,26 @@
 # batch-colourise-deepai
- A small Python script to batch colourise photos with the deepAI API, which uses Jason Antic's model.
+ A Python script to batch colourise photos with the deepAI API, which uses Jason Antic's model.
  https://deepai.org/machine-learning-model/colorizer
+ #Setup
+ To setup, install the dependencies by running install-dependencies.bat (you need pip)
+ #Run
+ to run, place the scripts into your image folder and run batch_colourise_with_deepai.py.
  
- todo:
+ #Features:
+ - batch process a folder of grayscale images with the DeepAI API
  
- -overlay colour from colourised image onto original full res image for better resolution
+ - Overlay colour from the low res colourised image onto the original full res image automatically. (similar to PS Color blendmode)
  
- -select folder instead of putting script in it
+ - Overlay can be used for individual image sets.
  
- -select only individual file mode
+ #todo:
  
- -only overlay color mode
+ - select folder instead of putting script in it
  
- -local file input sanitization when selecting files
+ - select only individual files mode (done for blend but not batch, just run blend on it's own)
  
- -proper gui
+ - local file input sanitization when selecting files
  
- -one day maybe run DeOldify locally instead of using API (far away)
+ - proper GUI
+ 
+ - run DeOldify locally instead of using API for better quality
