@@ -3,8 +3,9 @@
  
  This could also be applicable for downsizing videos and overlaying colour, drastically reducing the time needed to colourise a video.
  
- example:
+ examples:
 ![Gif Demo](https://github.com/endim8/batch-colourise-deepai/blob/master/Example/gifdemo.gif)
+![Close Cubes](https://github.com/endim8/batch-colourise-deepai/blob/master/Example/sidebyside.png)
  ## Setup:
  To setup, install the dependencies by running install-dependencies.bat (you need pip)
  
