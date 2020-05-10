@@ -11,7 +11,6 @@ set /p yn=""
 echo.
 if "%yn%"=="y" (
 	pip install Pillow==7.1.2
-	pip install PySimpleGUI==4.19.0
 	GOTO end
 )
 GOTO start
