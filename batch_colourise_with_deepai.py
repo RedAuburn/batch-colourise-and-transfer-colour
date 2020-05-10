@@ -26,8 +26,7 @@ def main():
                 newfilename = name[0]+"_colourised"+name[1]
                 newfilepath = os.path.join(newdir,newfilename)
                 originalfilepath = os.path.abspath(file)
-                if(outlink["err"]):
-                   print(outlink["err"])
+                print(outlink)
                 urllib.request.urlretrieve(outlink["output_url"],newfilepath)
                 print("created new file "+newfilename+"\n")
                 if (highrescolouroverlay):
