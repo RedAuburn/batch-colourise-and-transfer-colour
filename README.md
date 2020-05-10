@@ -12,3 +12,4 @@
  
  -only overlay color mode
  
+ -one day maybe use DeOldify locally instead of using API (far away)
