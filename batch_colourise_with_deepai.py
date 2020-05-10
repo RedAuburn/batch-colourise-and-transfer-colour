@@ -3,11 +3,12 @@ import requests, json, sys, os
 import blend_color_with_highres as bcwh
 
 highrescolouroverlay = True
-yourapikey = "a884a504-5db5-45b7-9299-906cb5ed93ae"
+yourapikey = "enter api key here"
 
 
-if(yourapikey == "a884a504-5db5-45b7-9299-906cb5ed93ae"):
+if(not yourapikey or yourapikey="enter your api key here"):
    print("you are using the default key, please consider signing up at deepai.org :)")
+   os.system("start \"\" https://deepai.org/dashboard/profile")
 
 newdir = os.path.join(os.getcwd(),r'colourised')
 if not os.path.exists(newdir):
