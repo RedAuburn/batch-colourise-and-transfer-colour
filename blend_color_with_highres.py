@@ -4,7 +4,7 @@ from PIL import Image
 import sys, os
 
 ftypes =[("image files","*.jpg;*.jpeg;*.png")]
-
+seperatefile = False
 
 #go away tk window
 root = tk.Tk()
@@ -24,7 +24,7 @@ def scalecoloured(highrespath,colourpath):
     himgres = Image.open(highrespath).size
     cimg = Image.open(colourpath)
     cimg = cimg.resize(himgres,Image.BILINEAR)
-    cimg.save(colourpath)
+    saveimg(cimg,colourpath)
     
 #splits the HS channels from colour image, merges it with V from the high res. (ps color blend mode)
 def colourblend(highrespath,colourpath):
@@ -34,12 +34,24 @@ def colourblend(highrespath,colourpath):
     hiresv = Image.open(highrespath).convert("L") 
     final = Image.merge("HSV",(colourh,colours,hiresv))
     final = final.convert("RGB")
-    final.save(colourpath)
+    saveimg(final,colourpath)
     
-
+def saveimg(image,path):
+    if(seperatefile):
+        newpath = os.path.dirname(path)
+        newname= os.path.splitext(os.path.basename(path))
+        newpath = newpath+"/highrescolourised/"+newname[0]+"_hires_colourised"+newname[1]
+        try:
+            os.mkdir(os.path.dirname(newpath))
+        except:
+            print("")
+        image.save(newpath)
+    else:
+        image.save(path)
+    
     
 #main 
-def main(hrpathimport,cpathimport,importedtest):
+def main(hrpathimport,cpathimport,importedtest,seperatefile):
     filepaths = getimages(hrpathimport,cpathimport,importedtest)
     if(filepaths[0] != "" or filepaths[1] != ""):
         print("starting colour image scaling...")
@@ -53,8 +65,8 @@ def main(hrpathimport,cpathimport,importedtest):
     
 #to prevent script being run on import in other scripts.  
 if __name__ == "__main__":
-    main("nothing entered yet\n","",False)
+    main("nothing entered yet\n","",False,seperatefile)
     
 
 
-    
+    #<PIL.Image.Image image mode=RGBA size=1919x1034 at 0x18315BA9390> ,'H:/GitClones/batch-colourise-deepai/Screenshot_6.png'

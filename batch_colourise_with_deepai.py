@@ -3,6 +3,8 @@ import requests, json, sys, os
 import blend_color_with_highres as bcwh
 
 highrescolouroverlay = True
+seperatehiresfile = False
+
 yourapikey = "enter api key here"
 
 
@@ -19,13 +21,14 @@ if(yourapikey and yourapikey!="enter api key here"):
                 headers={'api-key': yourapikey}
             )
              outlink = r.json()
-             newfilename = os.path.splitext(os.path.basename(file))[0]+"_colourised.jpg"
+             name= os.path.splitext(os.path.basename(file))
+             newfilename = name[0]+"_colourised."+name[1]
              newfilepath = os.path.join(newdir,newfilename)
              originalfilepath = os.path.abspath(file)
              urllib.request.urlretrieve(outlink["output_url"],newfilepath)
              print("created new file "+newfilename+"\n")
              if (highrescolouroverlay):
-                bcwh.main(originalfilepath,newfilepath,True)
+                bcwh.main(originalfilepath,newfilepath,True,seperatehiresfile)
        except:
            print("skipping "+file+", not valid image.\n")
 else:
