@@ -2,7 +2,7 @@ import urllib.request
 import requests, json, sys, os
 import blend_color_with_highres as bcwh
 
-highrescolouroverlay = False
+highrescolouroverlay = True
 yourapikey = "a884a504-5db5-45b7-9299-906cb5ed93ae"
 
 
