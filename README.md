@@ -13,7 +13,7 @@
  to run, place the scripts into your image folder and run batch_colourise_with_deepai.py.
  
  ## Features:
- - batch process a folder of grayscale images with the DeepAI API
+ - batch process a folder of images with the DeepAI API
  
  - Overlay colour from the low res colourised image onto the original full res image automatically. (similar to PS Color blendmode)
  
