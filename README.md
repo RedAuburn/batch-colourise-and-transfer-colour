@@ -1,5 +1,5 @@
 # batch-colourise-deepai
- A Python script to batch colourise photos and transfer colour to the high res original. colourising is done with the deepAI API, which uses Jason Antic's model.  https://deepai.org/machine-learning-model/colorizer
+ A Python script to batch colourise photos and transfer colour to the high res original. colourising is currently done with the deepAI API, which uses Jason Antic's model.  https://deepai.org/machine-learning-model/colorizer
  
  This could also be applicable for downsizing videos and overlaying colour, drastically reducing the time needed to colourise a video.
  
