@@ -10,7 +10,7 @@
  To setup, install the dependencies by running install-dependencies.bat (you need pip)
  
  ## Run:
- to run, place the scripts into your image folder and run batch_colourise_with_deepai.py.
+ to run, place your images into the script folder and run batch_colourise_with_deepai.py.
  
  ## Features:
  - batch process a folder of images with the DeepAI API
