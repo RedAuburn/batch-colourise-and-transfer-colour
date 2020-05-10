@@ -2,10 +2,12 @@
  A Python script to batch colourise photos with the deepAI API, which uses Jason Antic's model.
  https://deepai.org/machine-learning-model/colorizer
  
- ## Setup
+ example:
+![Gif Demo](https://github.com/endim8/batch-colourise-deepai/blob/master/Example/gifdemo.gif)
+ ## Setup:
  To setup, install the dependencies by running install-dependencies.bat (you need pip)
  
- ## Run
+ ## Run:
  to run, place the scripts into your image folder and run batch_colourise_with_deepai.py.
  
  ## Features:
