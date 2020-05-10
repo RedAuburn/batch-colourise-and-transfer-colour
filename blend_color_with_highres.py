@@ -21,12 +21,18 @@ def scalecoloured(highrespath,colourpath):#done
     cimg = Image.open(colourpath)
     cimg = cimg.resize(himgres,Image.BILINEAR)
     cimg.save(colourpath)
+    return("finished scaling colourised img")
 
 def colourblend(highrespath,colourpath):
-    #for safety, convert highres to grayscale with this stuff
-    #img = Image.open('image.png').convert('LA')
-    #img.save('greyscale.png')
-    return("nothing here yet\n")
+    colourhs = Image.open(colourpath).convert("HSV")
+    colourh = colourhs.getchannel(0)
+    colours = colourhs.getchannel(1)
+    hiresv = Image.open(highrespath).convert("L") #highresluminoscity
+    final = Image.merge("HSV",(colourh,colours,hiresv))
+    #final.save(colourpath)
+    final.show()
+    
+    return("finished blending images")
 
     
 #main 
