@@ -6,7 +6,7 @@ highrescolouroverlay = True
 seperatehiresfile = True #not working?
 localscaleb4up = False #not used yet
 
-yourapikey = "a884a504-5db5-45b7-9299-906cb5ed93ae"
+yourapikey = ""
 
 def main():
    if(yourapikey and yourapikey!="enter api key here"):
