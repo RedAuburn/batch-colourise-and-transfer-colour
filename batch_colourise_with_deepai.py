@@ -4,8 +4,9 @@ import blend_colour_with_highres as bcwh
 
 highrescolouroverlay = True
 seperatehiresfile = True #not working?
+localscaleb4up = False #not used yet
 
-yourapikey = ""
+yourapikey = "a884a504-5db5-45b7-9299-906cb5ed93ae"
 
 def main():
    if(yourapikey and yourapikey!="enter api key here"):
