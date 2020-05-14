@@ -4,7 +4,6 @@ from PIL import Image
 import sys, os
 
 ftypes =[("image files","*.jpg;*.jpeg;*.png")]
-seperatefile = False
 
 #go away tk window
 root = tk.Tk()
@@ -24,7 +23,7 @@ def scalecoloured(highrespath,colourpath):
     himgres = Image.open(highrespath).size
     cimg = Image.open(colourpath)
     cimg = cimg.resize(himgres,Image.BILINEAR)
-    saveimg(cimg,colourpath)
+    saveimg(cimg,colourpath) #doesnt work when seperate file enabled 
     
 #splits the HS channels from colour image, merges it with V from the high res. (ps color blend mode)
 def colourblend(highrespath,colourpath):
@@ -53,7 +52,7 @@ def saveimg(image,path):
 #main 
 def main(hrpathimport,cpathimport,importedtest,seperatefile):
     filepaths = getimages(hrpathimport,cpathimport,importedtest)
-    if(filepaths[0] != "" or filepaths[1] != ""):
+    if(filepaths[0] and filepaths[1]):
         print("starting colour image scaling...")
         scalecoloured(filepaths[0],filepaths[1])
         print("finished colour image scaling\n")
@@ -65,7 +64,8 @@ def main(hrpathimport,cpathimport,importedtest,seperatefile):
     
 #to prevent script being run on import in other scripts.  
 if __name__ == "__main__":
-    main("nothing entered yet\n","",False,seperatefile)
+    runfrommain = True
+    main("nothing entered yet\n","",False,False)
     
 
 
