@@ -19,23 +19,23 @@ def getimages(hrpathimport,cpathimport,imported):
         return(hrpathimport,cpathimport)
     
 #scales the coloured image to the same size as the high res.
-def scalecoloured(highrespath,colourpath):
+def scalecoloured(highrespath,colourpath,seperatefile):
     himgres = Image.open(highrespath).size
     cimg = Image.open(colourpath)
     cimg = cimg.resize(himgres,Image.BILINEAR)
-    saveimg(cimg,colourpath) #doesnt work when seperate file enabled 
+    saveimg(cimg,colourpath,seperatefile) #doesnt work when seperate file enabled 
     
 #splits the HS channels from colour image, merges it with V from the high res. (ps color blend mode)
-def colourblend(highrespath,colourpath):
+def colourblend(highrespath,colourpath,seperatefile):
     colourhs = Image.open(colourpath).convert("HSV")
     colourh = colourhs.getchannel(0)
     colours = colourhs.getchannel(1)
     hiresv = Image.open(highrespath).convert("L") 
     final = Image.merge("HSV",(colourh,colours,hiresv))
     final = final.convert("RGB")
-    saveimg(final,colourpath)
+    saveimg(final,colourpath,seperatefile)
     
-def saveimg(image,path):
+def saveimg(image,path,seperatefile):
     if(seperatefile):
         newpath = os.path.dirname(path)
         newname= os.path.splitext(os.path.basename(path))
@@ -54,10 +54,10 @@ def main(hrpathimport,cpathimport,importedtest,seperatefile):
     filepaths = getimages(hrpathimport,cpathimport,importedtest)
     if(filepaths[0] and filepaths[1]):
         print("starting colour image scaling...")
-        scalecoloured(filepaths[0],filepaths[1])
+        scalecoloured(filepaths[0],filepaths[1],seperatefile)
         print("finished colour image scaling\n")
         print("starting image blending...")
-        colourblend(filepaths[0],filepaths[1])
+        colourblend(filepaths[0],filepaths[1],seperatefile)
         print("finished image blending\n")
     else:
         print("please select two images\n")
@@ -66,7 +66,3 @@ def main(hrpathimport,cpathimport,importedtest,seperatefile):
 if __name__ == "__main__":
     runfrommain = True
     main("nothing entered yet\n","",False,False)
-    
-
-
-    #<PIL.Image.Image image mode=RGBA size=1919x1034 at 0x18315BA9390> ,'H:/GitClones/batch-colourise-deepai/Screenshot_6.png'

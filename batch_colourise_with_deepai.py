@@ -3,7 +3,7 @@ import requests, json, sys, os
 import blend_colour_with_highres as bcwh
 
 highrescolouroverlay = True
-seperatehiresfile = True #not working?
+seperatehiresfile = False #not working?
 localscaleb4up = False #not used yet
 
 yourapikey = ""
