@@ -14,20 +14,19 @@ def main():
       print(newdir)
       if not os.path.exists(newdir):
          os.makedirs(newdir)
-      for file in os.listdir():
+      for file in os.listdir("./input"):
           try:
                 print("using: "+file)
                 r = requests.post(
                    "https://api.deepai.org/api/colorizer",
-                   files={'image': open(file, 'rb'),},
+                   files={'image': open(os.path.join("./input",file), 'rb'),},
                    headers={'api-key': yourapikey}
                )
                 outlink = r.json()
                 name= os.path.splitext(os.path.basename(file))
                 newfilename = name[0]+"_colourised"+name[1]
                 newfilepath = os.path.join(newdir,newfilename)
-                originalfilepath = os.path.abspath(file)
-                print(outlink)
+                originalfilepath = os.path.join("./input",file)
                 urllib.request.urlretrieve(outlink["output_url"],newfilepath)
                 print("created new file "+newfilename+"\n")
                 if (highrescolouroverlay):
