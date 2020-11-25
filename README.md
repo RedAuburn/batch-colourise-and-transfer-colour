@@ -29,5 +29,3 @@
  - select only individual files mode (done for blend but not batch, just run blend on it's own)
  
  - local file input sanitization when selecting files
- 
- - run DeOldify locally instead of using API for better quality
