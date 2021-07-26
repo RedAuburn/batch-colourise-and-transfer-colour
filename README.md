@@ -8,7 +8,11 @@
 ![Close Cubes](https://github.com/endim8/batch-colourise-deepai/blob/master/Example/sidebyside.png)
  
  ## Run:
- to run, place your images into the script folder, open a terminal/cmd and cd into the folder and run "python3 batch_colourise_with_deepai.py"
+ - Place your images into the `input` folder
+ 
+ - Open a terminal/cmd and `cd` into the folder 
+ 
+ - Run `python3 batch_colourise_with_deepai.py`
  
  ## Features:
  - batch process a folder of images with the DeepAI API
