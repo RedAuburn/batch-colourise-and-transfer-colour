@@ -5,8 +5,11 @@ import blend_colour_with_highres as bcwh
 highrescolouroverlay = True
 seperatehiresfile = False #not working?
 localscaleb4up = False #not used yet
-
 yourapikey = ""
+
+with open(os.path.realpath("APIKey.txt")) as f:
+    yourapikey = f.read().split()[0]
+    print("\n	api key used: "+yourapikey+"\n")
 
 def main():
    if(yourapikey and yourapikey!="enter api key here"):
@@ -18,11 +21,13 @@ def main():
               file_extension = str.lower(os.path.splitext(file)[1])
               if(file_extension in [".jpeg", ".jpg", ".png", ".bmp"]):
                     print("using: " + file)
+
                     r = requests.post(
                        "https://api.deepai.org/api/colorizer",
                        files={'image': open(os.path.join("./input",file), 'rb'),},
-                       headers={'api-key': yourapikey}
-                   )
+                       headers={'api-key':yourapikey}
+                    )
+
                     outlink = r.json()
                     name= os.path.splitext(os.path.basename(file))
                     newfilename = name[0]+"_colourised"+name[1]
@@ -36,7 +41,7 @@ def main():
               else:
                   print("skipping " + file + ", not a valid image.\n")
           except:
-             print("skipping " + file + ", not a valid image.\n")
+             print("skipping " + file + ", unknown error\n")
    else:
          print("you need an API key, please consider sign up for one at deepai.org :)\n")
          webbrowser.open("https://deepai.org/dashboard/profile")
