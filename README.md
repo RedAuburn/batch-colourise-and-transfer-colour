@@ -18,12 +18,12 @@
  - Overlay can be used for individual image sets.
  
  ## Todo:
- [ ] scale image to upload locally
+- [ ] scale image to upload locally
  
- [ ] proper GUI
+- [ ] proper GUI
  
- [ ] select folder instead of putting script in it
+- [ ] select folder instead of putting script in it
  
- [ ] select only individual files mode (done for blend but not batch, just run blend on it's own)
+- [ ] select only individual files mode (done for blend but not batch, just run blend on it's own)
  
- [x] local file input sanitization when selecting files
+- [x] local file input sanitization when selecting files
